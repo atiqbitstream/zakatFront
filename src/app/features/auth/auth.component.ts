@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginRequest } from './interfaces/loginRequest.interface';
+import { AuthService } from './services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-auth',
-  imports: [],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css'
 })
