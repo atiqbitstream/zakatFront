@@ -15,7 +15,7 @@ export class AuthService {
   constructor(private http: HttpClient, private tokenService:TokenService) {}
 
   loginUser(newUserLogin:LoginRequest):Observable<LoginReponse> {
-    return this.http.post<LoginReponse>(`${environment.hackUrl}/auth/login_user`,newUserLogin).pipe(
+    return this.http.post<LoginReponse>(`${environment.hackUrl}/auth/login`,newUserLogin).pipe(
       tap(response=>{
          this.tokenService.setAuthData(response);
       })
